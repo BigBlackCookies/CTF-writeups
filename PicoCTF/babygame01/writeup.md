@@ -1,0 +1,4 @@
+## Git gud or die trying
+
+This is a 32-bit terminal based game that asks the player to reach the X in the corner only surprise surprise no flag. In order to get the flag we have to corrupt a variable that sits on the stack right above the array that prints the map. Going backwards until we reach position (0,0) we press [a] 4 times since being on 32-bit the padding is 4 bytes and we change the ["Has flag"] from 0 to the value of the player character which is [@].
+After this if we inspect with Ghidra the binary we see that aside from [wasd] we also have [l] and [p]. The [l] command changes the player character to whatever symbol we like(not much use for our cause) and [p] autowalks us to the finish line so after we overwrite the variable we can just send [p] and automatically win and also get the flag.

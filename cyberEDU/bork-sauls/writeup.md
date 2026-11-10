@@ -1,0 +1,3 @@
+## Integer overflow (dark souls edition :D)
+
+I could go on about a 3hr info dump about dark souls but I'll spare the details. All we have to do is get the boss's health to 0. Since we can substrct from its health only 3 times we can't beat it like normal people. Instead we can throw estus flasks at it and boost its health until it goes into the negatives(Signed int issues). The max capacity for signed int is 2,147,483,647. 2,147,483,648 starts to wrap around and give negative numbers. I substracted from 2,147,483,648 its current health then divided by how much health the 3rd option gives to the boss and I made a for loop that goes just right over that threshold, beating the boss. (Oh and also getting the flag :D)
